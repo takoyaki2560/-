@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtUtil {
         static final long EXPIRATIONTIME = 432_000_000;     // 5天
-        public static final String SECRET = "@ethci2925";            // JWT密码
+        public static final String SECRET = "group5";            // JWT密码
         public static final String TOKEN_PREFIX = "Bearer";        // Token前缀
         public static final String HEADER_STRING = "Authorization";// 存放Token的Header Key
 
