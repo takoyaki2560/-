@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     @Insert(" INSERT INTO wmsDb.users ( "
@@ -31,4 +33,10 @@ public interface UserMapper {
             + " WHERE "
             + "	   _id = #{_id} ")
     public Integer update(User user);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.users ")
+    public List<User> findAllUsers();
 }

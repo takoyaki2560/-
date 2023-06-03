@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface UseMapper {
     @Insert(" INSERT INTO wmsDb.Use ( "
@@ -22,4 +24,10 @@ public interface UseMapper {
             + " WHERE "
             + "	   INo = #{INo} AND pId = #{pId} ")
     public Use findUseById(String INo,String pId);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.Use ")
+    public List<Use> findAllUses();
 }

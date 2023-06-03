@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface ProductMapper {
     @Insert(" INSERT INTO wmsDb.product ( "
@@ -23,4 +25,10 @@ public interface ProductMapper {
             + " WHERE "
             + "	   pName = #{pName} ")
     public Product findProductByName(String pName);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.product ")
+    public List<Product> findAllProducts();
 }

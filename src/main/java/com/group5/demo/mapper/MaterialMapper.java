@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface MaterialMapper {
     @Insert(" INSERT INTO wmsDb.material ( "
@@ -22,4 +24,10 @@ public interface MaterialMapper {
             + " WHERE "
             + "	   mName = #{mName} ")
     public Material findMaterialByName(String mName);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.material ")
+    public List<Material> findAllMaterials();
 }

@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface RecordMapper {
     @Insert(" INSERT INTO wmsDb.browse ( "
@@ -22,4 +24,10 @@ public interface RecordMapper {
             + " WHERE "
             + "	   pId = #{pId} AND tId = #{tId} ")
     public Record findRecordByPidAndTid(String pId,String tId);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.Record ")
+    public List<Record> findAllRecords();
 }

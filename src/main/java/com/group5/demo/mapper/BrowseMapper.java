@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface BrowseMapper {
     @Insert(" INSERT INTO wmsDb.browse ( "
@@ -22,4 +24,10 @@ public interface BrowseMapper {
             + " WHERE "
             + "	   _id = #{_id} ")
     public Browse findBrowseById(String _id);
+
+    @Select(" SELECT "
+            + "*"
+            + " FROM "
+            + "	  wmsDb.browse ")
+    public List<Browse> findAllBrowses();
 }
