@@ -11,15 +11,15 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     @Insert(" INSERT INTO wmsDb.users ( "
-            + "	   _id, name, password, role "
+            + "	   _id, name, password, role, Address, phone, email "
             + " ) "
             + " VALUE ( "
-            + "	   #{_id}, #{name}, #{password}, #{role} "
+            + "	   #{_id}, #{name}, #{password}, #{role}, #{Address}, #{phone}, #{email}"
             + " ) ")
     public Integer insert(User user);
 
     @Select(" SELECT "
-            + "	   _id, name, password, role"
+            + "	   _id, name, password, role, Address, phone, email "
             + " FROM "
             + "	  wmsDb.users "
             + " WHERE "

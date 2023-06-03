@@ -19,7 +19,7 @@ public interface ProductMapper {
     public Integer insert( Product product);
 
     @Select(" SELECT "
-            + "	   pid, category, pName, package , saleCount , price"
+            + "	   pid, category, pName, package as pPackage, saleCount , price"
             + " FROM "
             + "	  wmsDb.product "
             + " WHERE "
@@ -27,7 +27,7 @@ public interface ProductMapper {
     public Product findProductByName(String pName);
 
     @Select(" SELECT "
-            + "*"
+            + "pid, category, pName, package as pPackage, saleCount , price"
             + " FROM "
             + "	  wmsDb.product ")
     public List<Product> findAllProducts();

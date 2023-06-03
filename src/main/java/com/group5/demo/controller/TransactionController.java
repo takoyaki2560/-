@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -17,7 +19,8 @@ public class TransactionController {
 
     @PostMapping("/add")
     public Transaction add(@RequestBody Transaction transaction){
-        Transaction newTransaction =  new Transaction(transaction.mId,transaction.transTime);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        Transaction newTransaction =  new Transaction(transaction.mId,timestamp);
         service.insert(newTransaction);
         return  newTransaction;
     }

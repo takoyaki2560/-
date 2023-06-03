@@ -23,6 +23,9 @@ public class UserService implements UserDetailsService {
         return mapper.findUerByName(userName);
     }
 
+    public List<User> findAll(){
+        return  mapper.findAllUsers();
+    }
     public Integer insert(User user){
         return  mapper.insert(user);
     }

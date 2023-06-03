@@ -7,15 +7,20 @@ public class User {
     public String name;
     public String password;
     public String role;
+    public String Address;
+    public String phone;
+    public String email;
 
     public User() {
     }
 
-    public User(String name, String password, String role) {
+    public User(String name, String password, String role, String address, String phone, String email) {
         this._id = UUID.randomUUID().toString().replaceAll("-","");
         this.name = name;
         this.password = password;
-        System.out.println(password.length());
         this.role = role;
+        this.Address = address;
+        this.phone = phone;
+        this.email = email;
     }
 }

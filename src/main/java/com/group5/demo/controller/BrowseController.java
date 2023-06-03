@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,8 @@ public class BrowseController {
 
     @PostMapping("/add")
     public Browse add(@RequestBody Browse browse){
-        Browse newBrowse =  new Browse(browse.uid,browse.pid,browse.browseTime);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        Browse newBrowse =  new Browse(browse.uid,browse.pid,timestamp);
         service.insert(newBrowse);
         return  newBrowse;
     }

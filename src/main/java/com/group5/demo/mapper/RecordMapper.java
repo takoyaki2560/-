@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface RecordMapper {
-    @Insert(" INSERT INTO wmsDb.browse ( "
+    @Insert(" INSERT INTO wmsDb.Record ( "
             + "	    pId, tId, salePrice, amount"
             + " ) "
             + " VALUE ( "

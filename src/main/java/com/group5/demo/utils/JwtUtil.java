@@ -28,8 +28,6 @@ public class JwtUtil {
     // JWT生成方法
         public static void addAuthentication(HttpServletRequest request,HttpServletResponse response, Authentication auth) {
 
-            System.out.println(auth.getName());
-            System.out.println(auth.getAuthorities());
 
             String Jti = UUID.randomUUID().toString();
             // 生成JWT
