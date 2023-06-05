@@ -26,6 +26,14 @@ public interface MaterialMapper {
     public Material findMaterialByName(String mName);
 
     @Select(" SELECT "
+            + "	   mId, mType, mName, mNum"
+            + " FROM "
+            + "	  wmsDb.material "
+            + " WHERE "
+            + "	   mId = #{id} ")
+    public Material findMaterialByID(String id);
+
+    @Select(" SELECT "
             + "*"
             + " FROM "
             + "	  wmsDb.material ")

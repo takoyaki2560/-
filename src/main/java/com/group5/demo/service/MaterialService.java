@@ -16,6 +16,10 @@ public class MaterialService {
         return mapper.insert(material);
     }
 
+    public Material findNameByID(String id){
+        return  mapper.findMaterialByID(id);
+    }
+
     public List<Material> findAll(){
         return mapper.findAllMaterials();
     }

@@ -16,7 +16,15 @@ public class ProductService {
         return mapper.insert(product);
     }
 
+    public Product findByName (String name){
+        return mapper.findProductByName(name);
+    }
     public List<Product> findAll(){
         return mapper.findAllProducts();
+    }
+
+    public  Product findNameByID(String id){
+        System.out.println(id);
+        return  mapper.findById(id);
     }
 }

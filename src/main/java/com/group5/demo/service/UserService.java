@@ -22,12 +22,15 @@ public class UserService implements UserDetailsService {
     public User findOne(String userName){
         return mapper.findUerByName(userName);
     }
-
     public List<User> findAll(){
         return  mapper.findAllUsers();
     }
     public Integer insert(User user){
         return  mapper.insert(user);
+    }
+
+    public  String findNameByID(String id){
+        return  mapper.findById(id);
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

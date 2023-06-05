@@ -31,4 +31,7 @@ public interface ProductMapper {
             + " FROM "
             + "	  wmsDb.product ")
     public List<Product> findAllProducts();
+
+    @Select("select * from product where pid = #{id}")
+    public Product findById(String id);
 }

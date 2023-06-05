@@ -27,4 +27,15 @@ public class ProductController {
     public List<Product> findAll(){
         return service.findAll();
     }
+
+    @GetMapping("/find")
+    public Product find(@RequestParam String name){
+        return service.findByName(name);
+    }
+
+    @GetMapping("/findProductNameById")
+    @PreAuthorize("hasRole('Admin')")
+    public Product findNameByID(@RequestParam String id){
+        return  service.findNameByID(id);
+    }
 }

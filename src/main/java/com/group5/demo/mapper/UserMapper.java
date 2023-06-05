@@ -39,4 +39,9 @@ public interface UserMapper {
             + " FROM "
             + "	  wmsDb.users ")
     public List<User> findAllUsers();
+
+    @Select("select users.name " +
+            "from users " +
+            "where _id = #{id}")
+    public String findById(String id);
 }

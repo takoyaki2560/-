@@ -42,4 +42,10 @@ public class Default {
     public List<User> findAll(){
         return service.findAll();
     }
+
+    @GetMapping("/findUserById")
+    @PreAuthorize("hasRole('Admin')")
+    public String findNameByID(@RequestParam String id){
+        return  service.findNameByID(id);
+    }
 }
