@@ -7,7 +7,7 @@
 * **設計風格: Restful api**
 * **身分驗證系統: Jwt**
 * **數據庫: mySql**
-* **數據庫運行環境: mysql - Official Image: 8.0**
+* **數據庫運行環境: mysql - Official Docker Image: 8.0**
 * **框架:**
 1. **身分驗證框架: spring sercurity**
 2. **jwt 加解密框架: jjwt**
